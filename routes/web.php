@@ -37,3 +37,8 @@ Route::get('/update',function(){
     $user->posts()->whereId(2)->update(['title'=>'second title updated','body'=>'second body updated']);
 
 });
+
+Route::get('/delete',function(){
+   $user=User::findOrFail(1);
+   $user->posts()->delete();
+});
